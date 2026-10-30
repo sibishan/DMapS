@@ -25,10 +25,16 @@ from frontend.create_matrix import (
     create_chip_dist_matrix,
 )
 from comparison_algorithms.mhsa.mhsa_mapper import MHSAMapper
-from comparison_algorithms.pytket_dqc.init_pytket_dqc_map import tket_dqc_map
 from comparison_algorithms.pytket_dqc.tket_dqc_rout import tketdqc_local_rout
 
 logger = logging.getLogger(__name__)
+
+
+def tket_dqc_map(*args, **kwargs):
+    # Imported on first use so the rest of DMapS runs without pytket installed.
+    from comparison_algorithms.pytket_dqc.init_pytket_dqc_map import tket_dqc_map as _tket_dqc_map
+
+    return _tket_dqc_map(*args, **kwargs)
 
 
 class MultiModeRouting:
