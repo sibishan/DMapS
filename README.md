@@ -1,3 +1,80 @@
+## Running the experiment for BOLTSABRE
+
+The experiment in `experiments/` maps and routes circuits with DMapS (CPA mapping + CAR routing) on devices A–F:
+
+- **Original circuits** (`experiments/data/in/circuits/`): each circuit declares only the qubits it uses.
+- **Padded circuits** (`experiments/data/in/circuits_alt/`): the same circuits with extra idle qubits declared.
+  DMapS cannot run these, so they are switched off (see [Padded circuits](#padded-circuits) below).
+
+Each circuit group is routed on one device:
+
+| Group | Device | Cores |
+|---|---|---|
+| `qasm_25` | A | four 4×4 cores, ring |
+| `qasm_64` | B | four 5×5 cores, ring |
+| `qasm_80` | C | four 6×5 cores, ring |
+| `qasm_95` | D | six 5×5 cores, 2×3 core grid |
+| `qasm_200` | E | eight 7×5 cores, 2×4 core grid |
+| `qasm_360` | F | twelve 7×6 cores, 3×4 core grid |
+
+The devices are defined in `experiments/devices/*.json`.
+
+```bash
+pip install -e .
+python experiments/run.py
+
+# Only some batches / circuits (substring match), 3 seeds, 4 parallel jobs
+python experiments/run.py --batch qasm_25 --circuit qft --circuit ghz --seeds 3 -j 4
+```
+
+It writes `experiments/data/out/dmaps_results.json`, overwriting any earlier run. For each circuit the file lists every seed's
+metrics and validity check, plus the best seed. A run is valid if every two-qubit gate sits on a device coupling.
+
+| Option | Default | Description |
+|---|---|---|
+| `--seeds N` | 5 | Seeds per circuit |
+| `--start-seed S` | 0 | First seed |
+| `--out-dir DIR` | `experiments/data/out` | Output directory |
+| `--batch LABEL` | all | Run only this group (e.g. `qasm_25`); repeatable |
+| `--circuit NAME` | all | Run only circuits whose file name contains `NAME`; repeatable |
+| `-j`, `--jobs` | CPU count | Seeds run in parallel |
+
+To change what runs, edit the top of `experiments/run.py`:
+
+- `BATCHES`: which circuit group runs on which device (comment out a row to skip it)
+- `CIRCUIT_SETS`: which circuit sets run, in what order (the output-file suffix comes from the set name)
+- `REMOTE_SWAP_COST`, `TELEGATE_COST`: EPR pairs charged per remote SWAP and per telegate
+
+### Metrics
+
+The metrics follow the DMapS paper (Sec. IV) and are counted from the routed circuit:
+
+- **Remote SWAP** (`remote_swaps`): SWAP gates between qubits on different chips
+- **Telegate** (`telegates`): CX gates between qubits on different chips (remote CNOTs)
+- **Inter-core** (`inter_core`) = remote SWAP + telegate
+- **EPR cost** (`epr_cost`) = 2 × remote SWAP + 1 × telegate
+- **SWAP** (`swaps`): intra-chip SWAPs
+
+The best seed is the valid run with the lowest EPR cost, then the fewest SWAPs, then the lowest seed. A seed always gives the same result.
+
+### Padded circuits
+
+The padded circuits have the same gates as the originals but declare qubits that no gate touches
+(e.g. `qreg q[41]` with 25 used). DMapS never counts or places qubits without gates, so its partitioner fails on the
+first idle qubit (`src/partitioner/qucirc_partitioner.py:104`, `KeyError`). Supporting them would mean changing DMapS
+itself, so `circuits_alt` is commented out of `CIRCUIT_SETS`. If both sets are enabled, `run.py` also writes
+`dmaps_results_alt.json` and a side-by-side `dmaps_comparison.json`.
+
+### Results and analysis
+
+`experiments/data/out/dmaps_results.json` holds the results for the original circuits.
+
+`experiments/data/out/analysis.ipynb` breaks the inter-core count down per circuit, in the layout of the paper's Table III:
+remote SWAPs, telegates, inter-core total, EPR cost and SWAPs, with geometric means per group and over the whole suite.
+It ends with a note on why there is no padded comparison.
+
+---
+
 # DMapS
 **DMapS** is **end-to-end quantum compiler** designed for **near-term distributed quantum computing architectures**, integrating qubit mapping and routing algorithms. These algorithms improve the execution efficiency of compiled quantum programs by optimizing EPR pair overhead and local SWAP gate insertions.
 
@@ -11,34 +88,6 @@ pip install -e .
 
 ## 🛠️ Usage
 More usage tutorials can be found [here](tests/usage.ipynb).​
-
-## 🧪 Running Experiments
-`scripts/run_experiment.py` runs DMapS (CPA mapping + CAR routing) on every circuit in `experiments/circuits/<batch>/` against a device in `experiments/devices/`, once per seed, and writes all runs plus the best run (fewest EPR pairs) to one JSON file. DMapS needs Python 3.11.
-
-```bash
-# Default: qasm_25 on G, qasm_64 on H, 10 seeds, all CPU cores
-python scripts/run_experiment.py -o experiments/results/results.json
-
-# Alternative devices
-python scripts/run_experiment.py --batch qasm_25:G_alt --batch qasm_64:H_alt \
-    -o experiments/results/results_alt.json
-
-# Only some circuits (substring match), 5 seeds, 4 parallel jobs
-python scripts/run_experiment.py --batch qasm_25:G --circuit qft --circuit ghz \
-    --num-seeds 5 -j 4
-```
-
-| Option | Default | Description |
-|---|---|---|
-| `--num-seeds` | 10 | Seeds per circuit |
-| `--start-seed` | 0 | First seed |
-| `--batch DIR:DEVICE` | `qasm_25:G`, `qasm_64:H` | Circuit folder and device name; repeatable |
-| `--circuit NAME` | all | Run only circuits whose filename contains `NAME`; repeatable |
-| `-j`, `--jobs` | CPU count | Seeds run in parallel |
-| `--remote-swap-epr` | 2 | EPR pairs per remote SWAP |
-| `-o`, `--output` | `experiments/results/dmaps_<timestamp>.json` | Output file |
-
-EPR count follows the DMapS paper: a remote CNOT costs 1 EPR pair and a remote SWAP costs 2. A seed always gives the same result. Devices are converted from telesabre format with `scripts/telesabre_device_to_dmaps.py`.
 
 ## 📂 Project Structure
 ```bash

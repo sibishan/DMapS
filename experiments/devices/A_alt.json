@@ -1,0 +1,731 @@
+{
+  "has multiple chips": true,
+  "chips": {
+    "chip 0": {
+      "use calibration file": false,
+      "qubits": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5",
+        "Q6",
+        "Q7",
+        "Q8",
+        "Q9",
+        "Q10",
+        "Q11"
+      ],
+      "fidelity": {
+        "Q0": {
+          "x/2": 0.999
+        },
+        "Q1": {
+          "x/2": 0.999
+        },
+        "Q2": {
+          "x/2": 0.999
+        },
+        "Q3": {
+          "x/2": 0.999
+        },
+        "Q4": {
+          "x/2": 0.999
+        },
+        "Q5": {
+          "x/2": 0.999
+        },
+        "Q6": {
+          "x/2": 0.999
+        },
+        "Q7": {
+          "x/2": 0.999
+        },
+        "Q8": {
+          "x/2": 0.999
+        },
+        "Q9": {
+          "x/2": 0.999
+        },
+        "Q10": {
+          "x/2": 0.999
+        },
+        "Q11": {
+          "x/2": 0.999
+        }
+      },
+      "couplings": [
+        {
+          "qubit pair": [
+            "Q0",
+            "Q1"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q1",
+            "Q2"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q3",
+            "Q4"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q4",
+            "Q5"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q6",
+            "Q7"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q7",
+            "Q8"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q9",
+            "Q10"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q10",
+            "Q11"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q0",
+            "Q3"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q1",
+            "Q4"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q2",
+            "Q5"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q3",
+            "Q6"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q4",
+            "Q7"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q5",
+            "Q8"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q6",
+            "Q9"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q7",
+            "Q10"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q8",
+            "Q11"
+          ],
+          "fidelity": 0.99
+        }
+      ]
+    },
+    "chip 1": {
+      "use calibration file": false,
+      "qubits": [
+        "Q12",
+        "Q13",
+        "Q14",
+        "Q15",
+        "Q16",
+        "Q17",
+        "Q18",
+        "Q19",
+        "Q20",
+        "Q21",
+        "Q22",
+        "Q23"
+      ],
+      "fidelity": {
+        "Q12": {
+          "x/2": 0.999
+        },
+        "Q13": {
+          "x/2": 0.999
+        },
+        "Q14": {
+          "x/2": 0.999
+        },
+        "Q15": {
+          "x/2": 0.999
+        },
+        "Q16": {
+          "x/2": 0.999
+        },
+        "Q17": {
+          "x/2": 0.999
+        },
+        "Q18": {
+          "x/2": 0.999
+        },
+        "Q19": {
+          "x/2": 0.999
+        },
+        "Q20": {
+          "x/2": 0.999
+        },
+        "Q21": {
+          "x/2": 0.999
+        },
+        "Q22": {
+          "x/2": 0.999
+        },
+        "Q23": {
+          "x/2": 0.999
+        }
+      },
+      "couplings": [
+        {
+          "qubit pair": [
+            "Q12",
+            "Q13"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q13",
+            "Q14"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q15",
+            "Q16"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q16",
+            "Q17"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q18",
+            "Q19"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q19",
+            "Q20"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q21",
+            "Q22"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q22",
+            "Q23"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q12",
+            "Q15"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q13",
+            "Q16"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q14",
+            "Q17"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q15",
+            "Q18"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q16",
+            "Q19"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q17",
+            "Q20"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q18",
+            "Q21"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q19",
+            "Q22"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q20",
+            "Q23"
+          ],
+          "fidelity": 0.99
+        }
+      ]
+    },
+    "chip 2": {
+      "use calibration file": false,
+      "qubits": [
+        "Q24",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28",
+        "Q29",
+        "Q30",
+        "Q31",
+        "Q32",
+        "Q33",
+        "Q34",
+        "Q35"
+      ],
+      "fidelity": {
+        "Q24": {
+          "x/2": 0.999
+        },
+        "Q25": {
+          "x/2": 0.999
+        },
+        "Q26": {
+          "x/2": 0.999
+        },
+        "Q27": {
+          "x/2": 0.999
+        },
+        "Q28": {
+          "x/2": 0.999
+        },
+        "Q29": {
+          "x/2": 0.999
+        },
+        "Q30": {
+          "x/2": 0.999
+        },
+        "Q31": {
+          "x/2": 0.999
+        },
+        "Q32": {
+          "x/2": 0.999
+        },
+        "Q33": {
+          "x/2": 0.999
+        },
+        "Q34": {
+          "x/2": 0.999
+        },
+        "Q35": {
+          "x/2": 0.999
+        }
+      },
+      "couplings": [
+        {
+          "qubit pair": [
+            "Q24",
+            "Q25"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q25",
+            "Q26"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q27",
+            "Q28"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q28",
+            "Q29"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q30",
+            "Q31"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q31",
+            "Q32"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q33",
+            "Q34"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q34",
+            "Q35"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q24",
+            "Q27"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q25",
+            "Q28"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q26",
+            "Q29"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q27",
+            "Q30"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q28",
+            "Q31"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q29",
+            "Q32"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q30",
+            "Q33"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q31",
+            "Q34"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q32",
+            "Q35"
+          ],
+          "fidelity": 0.99
+        }
+      ]
+    },
+    "chip 3": {
+      "use calibration file": false,
+      "qubits": [
+        "Q36",
+        "Q37",
+        "Q38",
+        "Q39",
+        "Q40",
+        "Q41",
+        "Q42",
+        "Q43",
+        "Q44",
+        "Q45",
+        "Q46",
+        "Q47"
+      ],
+      "fidelity": {
+        "Q36": {
+          "x/2": 0.999
+        },
+        "Q37": {
+          "x/2": 0.999
+        },
+        "Q38": {
+          "x/2": 0.999
+        },
+        "Q39": {
+          "x/2": 0.999
+        },
+        "Q40": {
+          "x/2": 0.999
+        },
+        "Q41": {
+          "x/2": 0.999
+        },
+        "Q42": {
+          "x/2": 0.999
+        },
+        "Q43": {
+          "x/2": 0.999
+        },
+        "Q44": {
+          "x/2": 0.999
+        },
+        "Q45": {
+          "x/2": 0.999
+        },
+        "Q46": {
+          "x/2": 0.999
+        },
+        "Q47": {
+          "x/2": 0.999
+        }
+      },
+      "couplings": [
+        {
+          "qubit pair": [
+            "Q36",
+            "Q37"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q37",
+            "Q38"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q39",
+            "Q40"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q40",
+            "Q41"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q42",
+            "Q43"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q43",
+            "Q44"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q45",
+            "Q46"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q46",
+            "Q47"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q36",
+            "Q39"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q37",
+            "Q40"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q38",
+            "Q41"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q39",
+            "Q42"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q40",
+            "Q43"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q41",
+            "Q44"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q42",
+            "Q45"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q43",
+            "Q46"
+          ],
+          "fidelity": 0.99
+        },
+        {
+          "qubit pair": [
+            "Q44",
+            "Q47"
+          ],
+          "fidelity": 0.99
+        }
+      ]
+    }
+  },
+  "remote connection": [
+    {
+      "chip 0": "Q2",
+      "chip 1": "Q12",
+      "fidelity": 0.9
+    },
+    {
+      "chip 0": "Q9",
+      "chip 2": "Q24",
+      "fidelity": 0.9
+    },
+    {
+      "chip 1": "Q23",
+      "chip 3": "Q38",
+      "fidelity": 0.9
+    },
+    {
+      "chip 2": "Q35",
+      "chip 3": "Q45",
+      "fidelity": 0.9
+    }
+  ]
+}
